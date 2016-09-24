@@ -10,7 +10,7 @@ import Repo from 'Repo';
 import ReduxBlogApp from 'ReduxBlogApp';
 import ReduxYoutubeApp from 'ReduxYoutubeApp';
 import ReduxWeatherApp from 'ReduxWeatherApp';
-import PhotoRootComponent from 'PhotoRootComponent';
+import PhotoGallery from 'PhotoGallery';
 
 module.exports = (
   <div>
@@ -35,7 +35,7 @@ module.exports = (
         <Route path="repo-maker/:userName/:repoName" component={Repo} />
       </Route>
 
-      <IndexRoute component={PhotoRootComponent} />
+      <Route path="joeno" component={PhotoGallery} />
 
     </Route>
   </div>

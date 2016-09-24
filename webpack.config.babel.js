@@ -79,8 +79,9 @@ module.exports = {
       ReduxWeatherReducers: 'modules/demo-apps/redux-weather/reducers',
       ReduxWeatherAppComponent: 'modules/demo-apps/redux-weather/components/app',
 
-      PhotoRootComponent: 'modules/photo-app',
       PhotoGallery: 'modules/photo-app',
+      store: 'modules/photo-app/configureStore',
+      Root: 'modules/photo-app/components/Root',
     },
     extensions: ['', '.js', '.jsx'],
   },
@@ -89,8 +90,8 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.ProvidePlugin({
-      '$': 'jquery',
-      'jQuery': 'jquery',
+      $: 'jquery',
+      jQuery: 'jquery',
     }),
   ] : [],
   devtool: '#eval-cheap-module-source-map',
