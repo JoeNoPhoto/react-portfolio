@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import { connect } from 'react-redux';
 import Gallery from 'react-grid-gallery';
 import { showGallery, loadGalleryData } from './../actions/index.js';
@@ -28,7 +29,7 @@ const App = ({
             />
 
             <label
-              className="button"
+              className={cn("button", {"active": gallery.id === activeGalleryId})}
               htmlFor={gallery.id}
             >
               {gallery.name}
