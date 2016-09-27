@@ -15,28 +15,28 @@ const App = ({
   showGallery,
 }) => (
   <div>
-    {
-      galleries.map(gallery => (
-        <div id="redBlack" className="button-group toggle" data-toggle="buttons-radio">
-          <input
-            type="radio"
-            id={gallery.id}
-            name="r-group"
-            onClick={() => showGallery(gallery.id)}
-            data-toggle="button"
-            key={gallery.id}
-          />
+    <div id="redBlack" className="button-group toggle" data-toggle="buttons-radio">
+      {
+        galleries.map(gallery => (
+          <span key={gallery.id}>
+            <input
+              type="radio"
+              id={gallery.id}
+              name="r-group"
+              onClick={() => showGallery(gallery.id)}
+              data-toggle="button"
+            />
 
-          <label
-            className="button"
-            htmlFor={gallery.id}
-          >
-            {gallery.name}
-          </label>
-        </div>
-
-      ))
-    }
+            <label
+              className="button"
+              htmlFor={gallery.id}
+            >
+              {gallery.name}
+            </label>
+          </span>
+        ))
+      }
+    </div>
 
 
     {!activeGalleryId &&

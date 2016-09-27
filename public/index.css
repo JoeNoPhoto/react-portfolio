@@ -25,9 +25,11 @@ img {
   margin-left: 0 !important`;
 }
 .button-group {
-  margin: 100px auto;
-  width: 600px;
-  margin-bottom: 30px;
+  margin: 100px auto 30px;
+  text-align: center;
+}
+.button-group > * {
+  display: inline-block;
 }
 .button-group h3 {
   color: #999;
