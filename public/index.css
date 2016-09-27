@@ -1,3 +1,59 @@
 .active {
   color: green;
 }
+input[data-toggle] {
+  display: none;
+}
+
+input[data-toggle]:checked + label,
+input[data-toggle]:checked + label:active {
+  background-color: salmon;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.button-group.toggle li:not(first-child) {
+  margin: 0 -0.9rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+}
+img {
+  margin-left: 0 !important`;
+}
+.button-group {
+  margin: 100px auto;
+  width: 600px;
+  margin-bottom: 30px;
+}
+.button-group h3 {
+  color: #999;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.button-group#redBlack .button {
+  background: linear-gradient(135deg, #292929, #191919);
+  border: none;
+  width: 120px;
+  height: 120px;
+  padding: 20px;
+  display: inline-block;
+  margin: -4px;
+  color: #F2070B;
+  font-size: 14px;
+  text-align: left;
+  text-shadow: 0 0 10px rgba(181, 26, 30, 0.4);
+  box-shadow: 0px 10px 30px rgba(28, 28, 28, 0.9);
+}
+.button-group#redBlack .button:hover {
+  background: linear-gradient(-45deg, #292929, #191919);
+}
+.button-group#redBlack .button.active {
+  background: #B51A1E;
+  color: #fff;
+  box-shadow: inset 0px 0px 30px rgba(28, 28, 28, 0.9);
+}

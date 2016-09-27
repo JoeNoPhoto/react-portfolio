@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import NavLink from './NavLink';
 
-export default class DemoNav extends Component {
-  render() {
-    return (
+const DemoNav = () => (
       <div className="top-bar">REACT and REDUX APPS
         <ul className="menu">
           <li>
@@ -54,5 +52,5 @@ export default class DemoNav extends Component {
         </ul>
       </div>
     );
-  }
-}
+
+export default DemoNav;

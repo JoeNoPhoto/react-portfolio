@@ -17,11 +17,27 @@ const App = ({
   <div>
     {
       galleries.map(gallery => (
-        <button onClick={() => showGallery(gallery.id)} key={gallery.id}>
-          {gallery.name}
-        </button>
+        <div id="redBlack" className="button-group toggle" data-toggle="buttons-radio">
+          <input
+            type="radio"
+            id={gallery.id}
+            name="r-group"
+            onClick={() => showGallery(gallery.id)}
+            data-toggle="button"
+            key={gallery.id}
+          />
+
+          <label
+            className="button"
+            htmlFor={gallery.id}
+          >
+            {gallery.name}
+          </label>
+        </div>
+
       ))
     }
+
 
     {!activeGalleryId &&
       <div>Click one of the buttons!</div>
@@ -41,16 +57,16 @@ const App = ({
 );
 
 export default connect(
-  (state) => ({
-    galleries: getGalleries(state),
-    activeGalleryId: getActiveGalleryId(state),
-    activeGalleryFetching: getFetching(state, getActiveGalleryId(state)),
-    activeGalleryPhotos: getPhotos(state, getActiveGalleryId(state)),
-  }),
-  (dispatch) => ({
-    showGallery: (id) => {
-      dispatch(loadGalleryData(id));
-      dispatch(showGallery(id));
-    },
-  })
+    (state) => ({
+      galleries: getGalleries(state),
+      activeGalleryId: getActiveGalleryId(state),
+      activeGalleryFetching: getFetching(state, getActiveGalleryId(state)),
+      activeGalleryPhotos: getPhotos(state, getActiveGalleryId(state)),
+    }),
+    (dispatch) => ({
+      showGallery: (id) => {
+        dispatch(loadGalleryData(id));
+        dispatch(showGallery(id));
+      },
+    })
 )(App);

@@ -10,7 +10,7 @@ export default combineReducers({
 
 /*
  * Selectors
- */
+*/
 export const getActiveGalleryId = (state) => fromActiveGallery.getActiveGalleryId(state.activeGallery);
 export const getGalleries = (state) => fromGalleries.getGalleries(state.galleries);
 export const getGallery = (state, id) => fromGalleries.getGallery(state.galleries, id);

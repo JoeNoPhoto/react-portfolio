@@ -5,13 +5,7 @@ import Root from 'Root';
 
 const PhotoNav = () => (
   <div className="top-bar">
-    JoeNoPhoto
-    <NavLink
-      to="/joeno"
-      activeClassName="active"
-      activeStyle={{ fontWeight: 'bold' }}
-    />
-    {/* <Root store={store} /> */}
+    <Root store={store} />
   </div>
 );
 

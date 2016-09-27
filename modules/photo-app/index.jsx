@@ -5,12 +5,9 @@ import { render } from 'react-dom';
 import store from './configureStore';
 import Root from './components/Root';
 
-const PhotoGallery = () => {
-  console.log(store);
-  return (
-      <Root store={store} />,
-      document.getElementById('app')
-  );
-};
+const PhotoGallery = () => render(
+  <Root store={store} />,
+  document.getElementById('app')
+);
 
 export default PhotoGallery;

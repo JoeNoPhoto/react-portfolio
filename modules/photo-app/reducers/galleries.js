@@ -1,6 +1,5 @@
 import normalizePhotos from './../utils/normalize-photos.js';
 
-
 const initialState = {
   '72157672493623286': { name: 'Music', photos: [] },
   '72157669502145453': { name: 'People', photos: [] },
@@ -13,11 +12,16 @@ const initialState = {
 const galleries = (state = initialState, action) => {
   switch (action.type) {
     case 'LOAD_GALLERY_DATA_REQUEST':
-      return Object.assign({}, state, {
-        [action.payload.id]: Object.assign({}, state[action.payload.id], {
-          fetching: true,
-        }),
-      });
+      return {
+        ...state,
+        [action.payload.id]: state[action.payload.id],
+        fetching: true,
+      };
+      // Object.assign({}, state, {
+      //   [action.payload.id]: Object.assign({}, state[action.payload.id], {
+      //     fetching: true,
+      //   }),
+      // });
 
     case 'LOAD_GALLERY_DATA_SUCCESS':
       return Object.assign({}, state, {
